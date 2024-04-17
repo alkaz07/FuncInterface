@@ -2,7 +2,7 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
-        example3();
+        example4();
     }
 
     private static void example1() {
@@ -57,5 +57,20 @@ public class Main {
         });
 
         blueM.paint("Кот");
+    }
+
+    public static void example4(){
+        Marker orangeM = new Marker("orange");
+        orangeM.setImage(s->drawKitty(s));
+        orangeM.paint("Маруся");
+
+        orangeM.setImage(Main::drawKitty);
+        orangeM.paint("Барсик");
+    }
+
+    public static void drawKitty(String s){
+        System.out.println("начинаем рисовать котеночка");
+        System.out.println(s);
+        System.out.println("мяу");
     }
 }
